@@ -1,0 +1,9 @@
+unit uTXT;
+
+interface
+
+Uses classes, forms, dialogs, SysUtils, u
+
+implementation
+
+end.

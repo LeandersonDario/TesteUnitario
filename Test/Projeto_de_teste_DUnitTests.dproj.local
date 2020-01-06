@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/01/06 00:08:41.000.104,=C:\Projetos\1__Projetos_Dunit\Test\TestuFrmCalculaCustoMedio.pas</Transaction>
+    <Transaction>2020/01/06 00:08:41.000.464,=C:\Projetos\1__Projetos_Dunit\TesteFomulario\uFrmCalculaCustoMedio.pas</Transaction>
+    <Transaction>2020/01/06 00:11:41.000.490,=C:\Projetos\1__Projetos_Dunit\Classes\uCalculoCustoMedio.pas</Transaction>
+    <Transaction>2020/01/06 00:14:32.000.656,C:\Projetos\1__Projetos_Dunit\Test\TestuFrmCalculaCustoMedio.pas=C:\Projetos\1__Projetos_Dunit\Test\GuiTesteFormulario\TestuFrmCalculaCustoMedio.pas</Transaction>
+    <Transaction>2020/01/06 00:19:21.000.090,=C:\Projetos\1__Projetos_Dunit\Classes\uTXT.pas</Transaction>
+    <Transaction>2020/01/06 00:19:43.000.074,=C:\Projetos\1__Projetos_Dunit\Interfaces\uInterfaceCalculoCustoMedio.pas</Transaction>
+    <Transaction>2020/01/06 00:19:59.000.573,=C:\Projetos\1__Projetos_Dunit\Interfaces\uInterfaceTXT.pas</Transaction>
+    <Transaction>2020/01/06 00:21:33.000.463,C:\Projetos\1__Projetos_Dunit\Classes\uTXT.pas=</Transaction>
+    <Transaction>2020/01/06 00:21:43.000.190,C:\Projetos\1__Projetos_Dunit\Interfaces\uInterfaceTXT.pas=</Transaction>
+    <Transaction>2020/01/06 00:52:18.000.632,=C:\Projetos\1__Projetos_Dunit\Test\TestClasseCalculoCustoMedio.pas</Transaction>
+    <Transaction>2020/01/06 00:55:18.000.027,C:\Projetos\1__Projetos_Dunit\Test\TestClasseCalculoCustoMedio.pas=C:\Projetos\1__Projetos_Dunit\Test\TesteClasse\TestClasseCalculoCustoMedio.pas</Transaction>
+    <Transaction>2020/01/06 01:23:25.000.659,=C:\Projetos\1__Projetos_Dunit\Classes\uTXT.pas</Transaction>
+    <Transaction>2020/01/06 01:23:37.000.252,=C:\Projetos\1__Projetos_Dunit\Interfaces\uInterfaceTXT.pas</Transaction>
+  </Transactions>
+</BorlandProject>

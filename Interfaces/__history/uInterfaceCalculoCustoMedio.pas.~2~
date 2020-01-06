@@ -1,0 +1,16 @@
+unit uInterfaceCalculoCustoMedio;
+
+interface
+uses
+  System.Generics.Collections, SysUtils, classes;
+
+type
+  iCalculoCustoMedio = interface
+   ['{4013EAF4-C567-447D-85A6-D9030E53A461}']
+    function Calcula_custo_medio(pQtde_Estoque_Anterior, pCusto_Medio_Anterior, pQuantidade_comprada, pVl_Reposicao, pQtde_Anterior, pQtd_Comprada : Double)
+: double;
+end;
+
+implementation
+
+end.

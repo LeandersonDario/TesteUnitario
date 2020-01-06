@@ -1,0 +1,20 @@
+unit uInterfaceTXT;
+
+interface
+
+uses
+  System.Generics.Collections, SysUtils, classes;
+
+type
+  iTxt = interface
+  ['{D6B1FF1C-4516-4541-BF7B-4BD9DF9DCCCD}']
+  function Obter_diretorio_Arquivo_TXT(): string;
+  function Buscar_diretorio_Arquivo_TXT(): TStringList;
+  function Carrega_Configuracao_Diretorio_Arquivo_TXT(pNomeArquivo : string): TStringList;
+
+
+end;
+
+implementation
+
+end.

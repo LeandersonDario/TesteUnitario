@@ -1,0 +1,5 @@
+server name=Pat1567
+database name=Wise800
+usuário=sa
+senha=123456
+

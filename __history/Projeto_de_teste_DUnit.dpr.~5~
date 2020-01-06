@@ -1,0 +1,18 @@
+program Projeto_de_teste_DUnit;
+
+uses
+  Vcl.Forms,
+  uFrmCalculaCustoMedio in 'TesteFomulario\uFrmCalculaCustoMedio.pas' {frmCalculaCusto},
+  uInterfaceCalculoCustoMedio in 'Interfaces\uInterfaceCalculoCustoMedio.pas',
+  uCalculoCustoMedio in 'Classes\uCalculoCustoMedio.pas',
+  uInterfaceTXT in 'Interfaces\uInterfaceTXT.pas',
+  uTXT in 'Classes\uTXT.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmCalculaCusto, frmCalculaCusto);
+  Application.Run;
+end.
