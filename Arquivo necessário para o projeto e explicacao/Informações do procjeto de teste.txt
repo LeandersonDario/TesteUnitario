@@ -6,29 +6,41 @@ Act – executar o que será testado.
 Assert – validar as informações depois do teste.
 
 Seguindo esse simples princípio, é possível separar o que será testado de todas as etapas de preparação e verificação do resultado, tornando claro “o que é o que”.
+
 --> programação de teste <--
 
+
 Cadastro de nota fiscal de entrada
+ 
  * Clicar em novo e colocar todas as informações necessária para cadastro da nota.
+  
   Essa Classe
-    . Criar unit Interfacecadastro que irá armazenar as interfaces que deverão ser herdadas por diferentes implementações.
-    . Vai trabalhar com lista de dados e comparando as informações da lista com txt  e trazendo o resultado.
-    . Criar uma implementação de TTestCase para permitir criar vários testcases (rotinas published). 
+    
+  . Criar unit uInterfaceTXT que irá armazenar as interfaces que deverão ser herdadas por diferentes implementações.   
+    
+  . Criar unit uTXT que herda a uInterfaceTXT.
+    
+  . Vai trabalhar com lista de dados e comparando as informações da lista com txt  e trazendo o resultado.
+    
+  . Criar uma implementação de TTestCase para permitir criar vários testcases (rotinas published). 
+
+
 
 Calculo de custo médio simples.
- * Fomula(Qtde Estoque Anterior x Custo Médio Anterior + Quantidade comprada x Vl Reposição) / (Qtde Anterior + Qtd Comprada)
+ 
+ * Formula(Qtde Estoque Anterior x Custo Médio Anterior + Quantidade comprada x Vl Reposição) / (Qtde Anterior + Qtd Comprada)
+ 
  * Criar classe para calcular custo médio(Simples) e aplicar o teste case (TTestCase).
+  
   Essa Classe
-    . Criar unit InterfaceCusto Medio que irá armazenar as interfaces que deverão ser herdadas por diferentes implementações   
-    . Vai ter um function para calcular custo médio de acordo com fomula
-    . Criar uma implementação de TTestCase para permitir criar vários testcases (rotinas published). 
-
-Com fomulario utilizando TGUITestCase.
- * Somar, dividir, multiplicar e diminuir
-   . Criar um fomulario para calculo de dados.
-   . Criar function para calula ou buscar esse dados de um classe.
-   . tela que adicionar as uses Forms, classes, dialogs, StdCtrls, TestFramework, TestExtensions, GUITesting, DUnitX.TestFramework( somente nos caso de DUnitX), além das Unit dos projetos;
-   . Criar procedure para temporarizar a ActionDelay que é o tempo de execução do teste.
+    
+   . Criar unit uInterfaceCalculoCustoMedio que irá armazenar as interfaces que deverão ser herdadas por diferentes implementações   
+    
+   . Vai ter um function para calcular custo médio de acordo com formula
+    
+   . Criar unit uCalculoCustoMedio que herda a uInterfaceCalculoCustoMedio.
+    
+   . Criar uma implementação de TTestCase para permitir criar vários testcases (rotinas published). 
 
 
 Como adicionar as informações para o TGUITestCase
