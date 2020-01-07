@@ -33,87 +33,83 @@ type
     FcalculoCustoMedio : tCalucoCustoMedio;
     FfrmCalculaCusto: TfrmCalculaCusto;
     // formulario   calcula custo
-    edtQtde_Estoque_Anterior: TEdit;
-    edtCusto_Médio_Anterior: TEdit;
-    edtQuantidade_comprada: TEdit;
-    edtVl_Reposicao: TEdit;
-    edtQtde_Anterior: TEdit;
-    edtQtd_Comprada: TEdit;
-    edtResultado: TEdit;
+    FedtQtde_Estoque_Anterior: TEdit;
+    FedtCusto_Médio_Anterior: TEdit;
+    FedtQuantidade_comprada: TEdit;
+    FedtVl_Reposicao: TEdit;
+    FedtQtde_Anterior: TEdit;
+    FedtQtd_Comprada: TEdit;
+    FedtResultado: TEdit;
 
   public
-    procedure SetUp; override;
-    procedure TearDown; override;
+    procedure SetUp(); override;
+    procedure TearDown(); override;
   published
     [Test]
-    procedure Valida_btnCalcularClick;
-    procedure Valida_Digitacao_Edit;
-    procedure Valida_SetFocus_Tela;
+    procedure Valida_btnCalcularClick();
+    procedure Valida_Digitacao_Edit();
+    procedure Valida_SetFocus_Tela();
 
   end;
 
 implementation
 
-procedure TestTfrmCalculaCusto.SetUp;
+procedure TestTfrmCalculaCusto.SetUp();
 begin
   FfrmCalculaCusto := TfrmCalculaCusto.Create(Application);
   FfrmCalculaCusto.Show;
   FcalculoCustoMedio := tCalucoCustoMedio.Create;
 end;
 
-procedure TestTfrmCalculaCusto.TearDown;
+procedure TestTfrmCalculaCusto.TearDown();
 begin
   FfrmCalculaCusto.Free;
   FfrmCalculaCusto := nil;
 end;
 
-procedure TestTfrmCalculaCusto.Valida_Digitacao_Edit;
+procedure TestTfrmCalculaCusto.Valida_Digitacao_Edit();
 begin
-  edtQtde_Estoque_Anterior := FindControl('edtQtde_Estoque_Anterior') as TEdit;
-  edtQtde_Estoque_Anterior.Text := '10';
-  CheckEquals('10', edtQtde_Estoque_Anterior.Text,'Teste de digitação edtQtde_Estoque_Anterior' );
+  FedtQtde_Estoque_Anterior := FindControl('edtQtde_Estoque_Anterior') as TEdit;
+  FedtQtde_Estoque_Anterior.Text := '10';
+  CheckEquals('10', FedtQtde_Estoque_Anterior.Text,'Teste de digitação edtQtde_Estoque_Anterior' );
 
-  edtCusto_Médio_Anterior := FindControl('edtCusto_Médio_Anterior') as TEdit;
-  edtCusto_Médio_Anterior.Text := '10';
-  CheckEquals('10', edtCusto_Médio_Anterior.Text,'Teste de digitação edtCusto_Médio_Anterior.Text' );
+  FedtCusto_Médio_Anterior := FindControl('edtCusto_Médio_Anterior') as TEdit;
+  FedtCusto_Médio_Anterior.Text := '10';
+  CheckEquals('10', FedtCusto_Médio_Anterior.Text,'Teste de digitação edtCusto_Médio_Anterior.Text' );
 
-  edtQuantidade_comprada := FindControl('edtQuantidade_comprada') as TEdit;
-  edtQuantidade_comprada.Text := '10';
-  CheckEquals('10', edtQuantidade_comprada.Text,'Teste de digitação edtQuantidade_comprada' );
+  FedtQuantidade_comprada := FindControl('edtQuantidade_comprada') as TEdit;
+  FedtQuantidade_comprada.Text := '10';
+  CheckEquals('10', FedtQuantidade_comprada.Text,'Teste de digitação edtQuantidade_comprada' );
 
-  edtVl_Reposicao := FindControl('edtVl_Reposicao') as TEdit;
-  edtVl_Reposicao.Text := '10';
-  CheckEquals('10', edtVl_Reposicao.Text, 'Teste de digitação edtVl_Reposicao');
+  FedtVl_Reposicao := FindControl('edtVl_Reposicao') as TEdit;
+  FedtVl_Reposicao.Text := '10';
+  CheckEquals('10', FedtVl_Reposicao.Text, 'Teste de digitação edtVl_Reposicao');
 
-  edtQtde_Anterior := FindControl('edtQtde_Anterior') as TEdit;
-  edtQtde_Anterior.Text := '10';
-  CheckEquals('10', edtQtde_Anterior.Text, 'Teste de digitação edtQtde_Anterior');
+  FedtQtde_Anterior := FindControl('edtQtde_Anterior') as TEdit;
+  FedtQtde_Anterior.Text := '10';
+  CheckEquals('10', FedtQtde_Anterior.Text, 'Teste de digitação edtQtde_Anterior');
 
-  edtQtd_Comprada := FindControl('edtQtd_Comprada') as TEdit;
-  EnterTextInto( edtQtd_Comprada, '10');
-  Checkequals('10', edtQtd_Comprada.Text, 'Teste de digitação edtQtd_Comprada');
+  FedtQtd_Comprada := FindControl('edtQtd_Comprada') as TEdit;
+  EnterTextInto(FedtQtd_Comprada, '10');
+  Checkequals('10', FedtQtd_Comprada.Text, 'Teste de digitação edtQtd_Comprada');
 
 end;
 
-procedure TestTfrmCalculaCusto.Valida_btnCalcularClick;
-var
-  Sender: TObject;
+procedure TestTfrmCalculaCusto.Valida_btnCalcularClick();
 begin
   ActionDelay := 600;
   Click('btnCalcular');
-  edtResultado := FindControl('edtResultado') as TEdit;
-  CheckEquals('10', edtResultado.Text, ' resulta no  edtResultado');
+  FedtResultado := FindControl('edtResultado') as TEdit;
+  CheckEquals('10', FedtResultado.Text, ' resulta no  edtResultado');
   ActionDelay := 500;
 end;
 
-procedure TestTfrmCalculaCusto.Valida_SetFocus_Tela;
+procedure TestTfrmCalculaCusto.Valida_SetFocus_Tela();
 begin
   FFailsOnNoChecksExecuted := false;
   SetFocus(FfrmCalculaCusto.btnCalcular);
   Check(not IsFocused(FfrmCalculaCusto.btnCalcular), 'Teste com Falha, pois o SetFocus não está no btnCalcular');
   Check(IsFocused(FfrmCalculaCusto.btnCalcular), ' Teste OK, pois verifica que  de fato o SetFocus não está no btnCalcular');
-
-
 end;
 
 

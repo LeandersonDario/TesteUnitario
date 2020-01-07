@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CF762215-3868-4986-BA78-9BA8A098EB5A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Projeto_de_teste_DUnit.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Projeto_de_teste_DUnitTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Projeto_de_teste_DUnit">
+        <MSBuild Projects="..\Projeto_de_teste_DUnit.dproj"/>
+    </Target>
+    <Target Name="Projeto_de_teste_DUnit:Clean">
+        <MSBuild Projects="..\Projeto_de_teste_DUnit.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Projeto_de_teste_DUnit:Make">
+        <MSBuild Projects="..\Projeto_de_teste_DUnit.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Projeto_de_teste_DUnitTests">
+        <MSBuild Projects="Projeto_de_teste_DUnitTests.dproj"/>
+    </Target>
+    <Target Name="Projeto_de_teste_DUnitTests:Clean">
+        <MSBuild Projects="Projeto_de_teste_DUnitTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Projeto_de_teste_DUnitTests:Make">
+        <MSBuild Projects="Projeto_de_teste_DUnitTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Projeto_de_teste_DUnit;Projeto_de_teste_DUnitTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Projeto_de_teste_DUnit:Clean;Projeto_de_teste_DUnitTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Projeto_de_teste_DUnit:Make;Projeto_de_teste_DUnitTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -29,8 +29,8 @@ type
    property Qtde_Anterior : double read  FQtde_Anterior write FQtde_Anterior;
    property Qtd_Comprada : double read  FQtd_Comprada write FQtd_Comprada;
 
-   constructor create;
-   destructor Destroy; override;
+   constructor create();
+   destructor Destroy(); override;
 
    function Calcula_custo_medio(pQtde_Estoque_Anterior, pCusto_Medio_Anterior, pQuantidade_comprada, pVl_Reposicao, pQtde_Anterior, pQtd_Comprada : Double) : double;
 end;
@@ -39,7 +39,7 @@ implementation
 
 
 { tCalucoCustoMedio }
-constructor tCalucoCustoMedio.create;
+constructor tCalucoCustoMedio.create();
 begin
    Qtde_Estoque_Anterior := 0;
    Custo_Medio_Anterior := 0;
@@ -50,7 +50,7 @@ begin
 
 end;
 
-destructor tCalucoCustoMedio.Destroy;
+destructor tCalucoCustoMedio.Destroy();
 begin
 
   inherited;

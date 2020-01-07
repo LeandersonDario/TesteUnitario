@@ -32,20 +32,20 @@ type
     FtCalucoCustoMedio: tCalucoCustoMedio;
     Flista : TStringList;
     FtTxt: tTxt;
-    Procedure ListaDadosTXT;
+    Procedure ListaDadosTXT();
 
   public
-    procedure SetUp; override;
-    procedure TearDown; override;
+    procedure SetUp(); override;
+    procedure TearDown(); override;
   published
     [Test]
-    procedure Calcula_custo_medio;
-    procedure Resgatar_parametros_DadosConexao_cadastroNotaFiscalEntrada;
+    procedure Calcula_custo_medio();
+    procedure Resgatar_Parametros_DadosConexao_CadastroNotaFiscalEntrada();
   end;
 
 implementation
 
-procedure TesttCalucoCustoMedio.SetUp;
+procedure TesttCalucoCustoMedio.SetUp();
 begin
   FtCalucoCustoMedio := tCalucoCustoMedio.Create;
   FtTxt := tTxt.Create;
@@ -58,28 +58,31 @@ begin
 	Flista := FtTxt.Buscar_diretorio_Arquivo_TXT;
 end;
 
-procedure TesttCalucoCustoMedio.TearDown;
+procedure TesttCalucoCustoMedio.TearDown();
 begin
   FtCalucoCustoMedio.Free;
   FtCalucoCustoMedio := nil;
 end;
 
-procedure TesttCalucoCustoMedio.Calcula_custo_medio;
+procedure TesttCalucoCustoMedio.Calcula_custo_medio();
+Const
+  lResultadoEsperado: Double = 10;
+  lQtde_Estoque_Anterior : double = 10;
+  lCusto_Medio_Anterior : double = 10;
+  lQuantidade_comprada : double = 10;
+  lVl_Reposicao :  double = 10;
+  lQtde_Anterior : double = 10;
+  lQtd_Comprada : double = 10;
 var
-  Resultado: Double;
-
+  lResultado : Double;
 begin
-  // TODO: Setup method call parameters
-  Resultado := FtCalucoCustoMedio.Calcula_custo_medio(10,10,10,10,10,10);
-  CheckEquals(Resultado,10,'Resultado dentro do parametro eperado');
-  // TODO: Validate method results
+  lResultado := FtCalucoCustoMedio.Calcula_custo_medio(lQtde_Estoque_Anterior, lCusto_Medio_Anterior, lQuantidade_comprada, lVl_Reposicao, lQtde_Anterior, lQtd_Comprada);
+  CheckEquals(lResultado,lResultadoEsperado,'Resultado dentro do parametro eperado');
+
 end;
 
-procedure TesttCalucoCustoMedio.ListaDadosTXT;
+procedure TesttCalucoCustoMedio.ListaDadosTXT();
 begin
-
-Flista := TStringList.Create;
-  try
     Flista := TStringList.Create;
   try
     Flista.Add('server name=pat1567');
@@ -112,16 +115,12 @@ Flista := TStringList.Create;
     Flista.Add('forma de pagamento= 000005');
 
     Flista.SaveToFile(cArquivo);
-
-  finally
-
-  end;
   finally
     Flista.Free;
   end;
 end;
 
-procedure TesttCalucoCustoMedio.Resgatar_parametros_DadosConexao_cadastroNotaFiscalEntrada;
+procedure TesttCalucoCustoMedio.Resgatar_parametros_DadosConexao_cadastroNotaFiscalEntrada();
 begin
   //Valida acesso ao bimer
   CheckEquals('pat1567', Flista.Values['server name'],'O parâmetro Server name é inválido.');
