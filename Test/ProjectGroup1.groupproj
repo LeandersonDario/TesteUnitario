@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{CF762215-3868-4986-BA78-9BA8A098EB5A}</ProjectGuid>
+        <ProjectGuid>{B91B2ED0-EA24-4B41-8D60-6E6896BA9CBE}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="..\Projeto_de_teste_DUnit.dproj">

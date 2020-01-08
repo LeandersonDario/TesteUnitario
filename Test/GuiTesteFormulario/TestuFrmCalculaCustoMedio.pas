@@ -49,6 +49,7 @@ type
     procedure Valida_btnCalcularClick();
     procedure Valida_Digitacao_Edit();
     procedure Valida_SetFocus_Tela();
+    procedure Valida_TabOrder();
 
   end;
 
@@ -59,6 +60,7 @@ begin
   FfrmCalculaCusto := TfrmCalculaCusto.Create(Application);
   FfrmCalculaCusto.Show;
   FcalculoCustoMedio := tCalucoCustoMedio.Create;
+  ActionDelay := 1000;
 end;
 
 procedure TestTfrmCalculaCusto.TearDown();
@@ -69,6 +71,7 @@ end;
 
 procedure TestTfrmCalculaCusto.Valida_Digitacao_Edit();
 begin
+  ActionDelay := 1000;
   FedtQtde_Estoque_Anterior := FindControl('edtQtde_Estoque_Anterior') as TEdit;
   FedtQtde_Estoque_Anterior.Text := '10';
   CheckEquals('10', FedtQtde_Estoque_Anterior.Text,'Teste de digitação edtQtde_Estoque_Anterior' );
@@ -96,12 +99,14 @@ begin
 end;
 
 procedure TestTfrmCalculaCusto.Valida_btnCalcularClick();
+Const
+  lResultadoEsperado: string = '10';
 begin
-  ActionDelay := 600;
+  ActionDelay := 1000;
   Click('btnCalcular');
   FedtResultado := FindControl('edtResultado') as TEdit;
-  CheckEquals('10', FedtResultado.Text, ' resulta no  edtResultado');
-  ActionDelay := 500;
+  CheckEquals(lResultadoEsperado, FedtResultado.Text, ' Resulta no esperado no edtResultado');
+
 end;
 
 procedure TestTfrmCalculaCusto.Valida_SetFocus_Tela();
@@ -112,7 +117,15 @@ begin
   Check(IsFocused(FfrmCalculaCusto.btnCalcular), ' Teste OK, pois verifica que  de fato o SetFocus não está no btnCalcular');
 end;
 
-
+procedure TestTfrmCalculaCusto.Valida_TabOrder;
+begin
+  FFailsOnNoChecksExecuted := false;
+  Tab(0);
+  Check(GetFocused = FfrmCalculaCusto.edtQtde_Estoque_Anterior, 'Parametro Tab esperado edtQtde_Estoque_Anterior é 0');
+  Tab(2);
+  Check(GetFocused = FfrmCalculaCusto.edtCusto_Médio_Anterior,  'Parametro Tab fora do esperado');
+  //Melhora a rotina de tab
+end;
 
 initialization
   // Register any test cases with the test runner
