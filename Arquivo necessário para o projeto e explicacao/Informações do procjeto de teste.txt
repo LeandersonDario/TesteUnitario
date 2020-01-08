@@ -48,4 +48,11 @@ Como adicionar as informações para o TGUITestCase
    . Adicione no projeto delphi, Abra o Delphi > Tools > Options >Library e clique nos tres pontinhos do Library path
    . Abra o icone com uma pastinha do Greyed items > procure dentro de onde foi extraído os arquivos do pacote a pasta src e adicione  
 
+
+A Fazer
+ * Criar teste buscando dados da planilha
+ * Criar teste buscando dados da PDF
+ * Criar teste buscando dados da XML
+ * Criar teste buscando Banco de dados 
+
    
